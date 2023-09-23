@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petinfo - Feed</title>
+
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../src/styles/reset.css" />
+    <link rel="stylesheet" href="../../src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../src/styles/feed.css" />
+
+    <!-- SCRIPTS -->
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+      defer
+    ></script>
+  
+    <script type="module" src="../scripts/feed.js" defer></script>
+    
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <h2 class="title3 header__title bold">Petinfo</h2>
+        <nav class="user-nav__container">
+          <div class="user__action">
+            <button id="user__newpost" class="btn btn--brand btn--large text3">
+              Criar publicação
+            </button>
+            <img class="user__image" src="" alt=""/>
+          </div>
+          <div class="user__logout hidden">
+            <h2 class="user__uniquename text3 bolder"></h2>
+            <button class="text4 logout__button">
+              <div class="logout__icon"></div>
+              Sair da conta
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <h1 class="feed__title text2 bolder">Feed</h1>
+
+      <!-- POSTS -->
+      <section class="posts allPosts">
+        <!-- Aqui serão renderizados os posts -->
+      </section>
+    </main>
+
+    <dialog class="modal__controller__post">
+      <div class="header__modal">
+        <h2>Criando novo post</h2>
+        <button class="close__modal button__close">X</button>
+      </div>
+
+      <div class="main__modal">
+        <h3>Título do Post</h3>
+        <input
+          type="text"
+          name="title"
+          class="title__post post__info"
+          placeholder="Digite o título aqui"
+        />
+        <h3>Conteúdo do Post</h3>
+        <textarea
+          class="content__post post__info"
+          name="content"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Desenvolva o conteúdo aqui"
+        ></textarea>
+      </div>
+      
+              <div class="div__buttons">
+                <button class="close__modal button__cansel">Cancelar</button>
+                <button class="publish__post">Publicar</button>
+      </div>
+    </dialog>
+
+    <dialog class="modal__fullPost">
+      <div class="modal__header">
+        <div class="user__infos">
+          <img class="user__imgs-modal" src="" alt="" />
+          <p class="user__name-modal"></p>
+          <p class="post__date-modal"></p>
+        </div>
+        <button class="modal__close-modal">X</button>
+      </div>
+
+      <div class="modal__main">
+        <h1 class="post__title-modal text1 bolder"></h1>
+        <p class="post__content-modal text3"></p>
+      </div>
+    </dialog>
+
+    <dialog class="modal__controller__edit">
+      <div class="header__modal">
+        <h2>Edição</h2>
+        <button class="close__modal button__close">X</button>
+      </div>
+
+      <div class="main__modal">
+        <h3>Título do Post</h3>
+        <input
+          type="text"
+          name="title"
+          class="title__edit post__edit"
+          placeholder="Digite o título aqui"
+        />
+        <h3>Conteúdo do Post</h3>
+        <textarea
+          class="content__edit post__edit"
+          name="content"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Desenvolva o conteúdo aqui"
+        ></textarea>
+
+        <div class="div__buttons">
+          <button class="close__modal button__cansel">Cancelar</button>
+          <button class="publish__edit">Salvar Alterações</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="confirm__delete-modal">
+
+      <div class="header__modal">
+        <h3>Confirmação de exclusão</h3>
+        <button class="close__modal button__close">X</button>
+      </div>
+      <div class="main__modal-confirm">
+        <h2>Tem certeza que deseja excluir esse post?</h2>
+        <p>Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
+      </div>
+      <div class="div__buttons">
+          <button class="close__modal button__cansel">Cancelar</button>
+          <button class="post-delet-button">Sim, excluir esse post</button>
+        </div>
+    </dialog>
+  </body>
+</html>
